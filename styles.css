@@ -189,37 +189,15 @@ p{
     padding-right: 20px;
 }
 
-/* Responsive design for transparent text on image starts*/
-@media (max-width: 768px) {
-    .text-block {
-        width: auto;
-        height: auto;
-        top: 10px;
-        right: 10px;
-        left: 10px;
-        bottom: 10px;
-        font-size: 1.5rem;
-        padding: 10px;
-    }
-}
-
-@media (max-width: 480px) {
-    .text-block {
-        width: auto;
-        height: auto;
-        top: 5px;
-        right: 5px;
-        left: 5px;
-        bottom: 5px;
-        font-size: 1.25rem;
-        padding: 5px;
-    }
-}    
-
+/* Mobile view adjustments */
 @media (max-width: 600px) {
     .text-block {
-        padding: 10px;
-        font-size: 1.2rem;
+        font-size: 9.5px; /* Adjust font size for better readability on smaller screens */
+        padding: 9px; /* Space between text and all borders */
+        max-width: 93%; /* Ensure the text block doesn't overflow the container */
+        top: 33.7%;
+        left: 46.85%;
+        transform: translate(-50%, -50%);
     }
 }
 /* Responsive design for transparent text on image ends*/
@@ -282,6 +260,19 @@ body {
     background-image: url(images/cosmetics-and-skin-care.jpg)
 }
 
+.offers ul {
+    list-style-type: disc; /* Use bullet points for the list */
+    padding-left: 70px; /* Add left padding to the list */
+    margin-top: 10px; /* Add margin on top of the list */
+    margin-bottom: 27.5px; /* Add margin on top of the list */
+    text-align: left;
+    
+}
+
+.offers li {
+    padding: 5px 0; /* Padding between list items */ 
+}
+
 .card h2 {
     padding: 10px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -304,7 +295,7 @@ body {
 }
 
 .card:hover {
-    background-color: rgb(70, 70, 70);
+    background-color: rgb(58, 58, 58);
     color: white;
     cursor: pointer;
     transform: scale(1.03);
@@ -330,8 +321,172 @@ body {
 
 
 
+/*About Us mobile responsive*/
+@media (max-width: 768px) {
+    .flex-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .flex-container div {
+        margin: 10px;
+    }
+
+    .flex-container img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    table {
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    table td {
+        padding: 10px;
+        vertical-align: top; /* Align content to the top */
+    }
+
+    .content iframe, .content img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .content table {
+        display: block; /* Change the display of tables to block */
+    }
+
+    .content table th{
+        font-size: 10px;
+    }
+
+    .content table tr {
+        display: block; /* Change the display of table rows to block */
+        margin-bottom: 20px; /* Add some space between table rows */
+    }
+
+    .content table tr td {
+        display: block; /* Change the display of table cells to block */
+    }
+}
+/*About Us mobile responsive ends*/
+
+/*About Us services table*/
+/* Wrapper for centering the table */
+.table-wrapper {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+/* Default styles */
+.services table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.services th,
+.services td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+.services th {
+    background-color: #000080;
+}
+
+.services tfoot td {
+    background-color: #000080;
+    font-style: italic;
+}
+
+/* Media query for screens smaller than 768px */
+@media (max-width: 768px) {
+    /* Reduce padding for better fit on smaller screens */
+    .services th,
+    .services td {
+        padding: 8px;
+    }
+
+    /* Remove borders to create a cleaner layout */
+    .services th,
+    .services td {
+        border: none;
+    }
+
+    /* Display table cells as blocks */
+    .services th,
+    .services td {
+        display: block;
+        width: 100%; /* Ensure cells take full width of the container */
+        text-align: left; /* Align text to the left for readability */
+        font-size: 11px;
+    }
+
+    /* Styles for header cells */
+    .services th {
+        background-color: #000080;
+        color: #fff; /* Adjust text color for better readability */
+        font-weight: bold; /* Make header text bold for emphasis */
+    }
+
+    /* Styles for footer cells */
+    .services tfoot td {
+        background-color: #000080;
+        color: #fff; /* Adjust text color for better readability */
+        font-style: italic;
+    }
+
+    /* Additional styles for specific layout adjustments */
+    .services tbody tr {
+        display: block;
+        margin-bottom: 20px; /* Add margin between table rows */
+    }
+
+    /* Adjust layout to have 3 rows and 3 columns */
+    .services tbody td {
+        width: calc(100% / 3); /* Divide the width equally into 3 columns */
+        float: left; /* Float each cell to the left */
+        box-sizing: border-box; /* Include padding and border in the width calculation */
+    }
+
+    .services thead tr th {
+        display: block; /* Display header cells as blocks */
+        width: 33.33%; /* Set width to one-third of the container width */
+        float: left; /* Float each cell to the left */
+    }
+
+    .services tbody td {
+        width: calc(100% / 3); /* Set width to one-third of the container width */
+        float: left; /* Float each cell to the left */
+        box-sizing: border-box; /* Include padding and border in the width calculation */
+    }
 
 
+    /* Clear floats to prevent layout issues */
+    .services tbody::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    /* Adjust margins of the table wrapper for smaller screens */
+    .table-wrapper {
+        margin: 0 10px; /* Set narrower margins on both sides */
+    }
+
+    /* Adjust layout of table body for mobile devices */
+    .services tbody {
+        display: block; /* Display table body as block */
+    }
+}
+/*About Us services table ends here*/
+
+
+
+/*Diary page styling*/
 /* Styling for each product */
 .product {
     width: 300px;
@@ -398,74 +553,63 @@ body {
 }
 
 /* Styling for cosmetics products */
-/* Styling for the products table */
 .products-table {
-    width: 50%; /* Set table width to fill its container */
-    border-collapse: collapse; /* Collapse borders between table cells */
+    width: 100%;
+    border-collapse: collapse;
 }
 
-/* Responsive styling for the products table */
-@media (max-width: 800px) {
-    .products-table {
-        width: 100%; /* Make the table take full width on smaller screens */
-    }
-}
-
-/* Styling for table cells (td) */
 .products-table td {
-    padding: 20px; /* Add padding to the table cells */
-    border: 1px solid #ddd; /* Add border to separate table cells */
-    text-align: center; /* Center align the content inside table cells */
+    width: 33.33%; /* Divide equally for three columns */
+    padding: 30px;
+    text-align: center;
+    vertical-align: top;
 }
 
-/* Responsive styling for table cells */
-@media (max-width: 800px) {
+.item {
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.item img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.item h2 {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.item h4 {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+@media (max-width: 768px) {
+    .products-table, .products-table tr, .products-table td {
+        display: block;
+        width: 100%;
+    }
+
+    .products-table {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center the table in mobile view */
+    }
+
     .products-table td {
-        padding: 10px; /* Reduce padding on smaller screens */
+        margin-bottom: 20px;
+    }
+
+    .item {
+        width: 100%; /* Adjust the width for better appearance on mobile */
     }
 }
-
-/* Styling for product images */
-.products-table img {
-    width: 200px; /* Ensure images don't exceed their container width */
-    height: 200px; /* Maintain aspect ratio of images */
-    border-radius: 4px; /* Add border radius for rounded corners */
-}
-
-/* Responsive styling for product images */
-@media (max-width: 800px) {
-    .products-table img {
-        width: 100px; /* Reduce image size on smaller screens */
-        height: 100px;
-    }
-}
-
-/* Styling for product titles */
-.products-table h2 {
-    margin-top: 10px; /* Add margin to separate title from image */
-    font-size: 18px; /* Set font size for the product title */
-}
-
-/* Responsive styling for product titles */
-@media (max-width: 800px) {
-    .products-table h2 {
-        font-size: 16px; /* Reduce font size on smaller screens */
-    }
-}
-
-/* Styling for product prices */
-.products-table h4 {
-    margin-top: 10px; /* Add margin to separate price from title */
-    font-size: 16px; /* Set font size for the product price */
-}
-
-/* Responsive styling for product prices */
-@media (max-width: 800px) {
-    .products-table h4 {
-        font-size: 14px; /* Reduce font size on smaller screens */
-    }
-}
-
 /*Cosmetics Products page ends here*/
 
 
@@ -566,6 +710,17 @@ header, footer {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+@media (max-width: 768px) {
+    header, footer {
+        padding: 5px; /* Reduce padding for smaller screens */
+        font-size: 14px; /* Adjust font size for better readability on mobile */
+    }
+
+    header h3 {
+        font-size: 18px;
+    }
+}
+
 /*About Us-table for services*/
 /* Apply basic styles to the table */
 table {
@@ -657,8 +812,39 @@ content{
         width: 100%;
     }
 
+    .venue img {
+        width: 100%;
+        height: 150px;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 0px;
+    }
+
     .product {
         width: 100%;
+    }
+
+    .product img {
+        width: 100%;
+        height: 150px;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 0px;
+    }
+
+    .item{
+        width: 100%;
+    }
+
+    .item img {
+        width: 100%;
+        height: 150px;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 0px;
+    }
+
+    .myButton {
+        padding: 10px 20px; /* Further adjusted padding for smaller screens */
+        font-size: 17px; /* Further adjusted font size for smaller screens */
+        margin: 3px 0; /* Further adjusted margin for better spacing */
     }
 
     #productTable,
@@ -678,14 +864,3 @@ content{
         width: 100%;
 }
 }
-
-
-  
-
-
-
-
-
-
-
-
